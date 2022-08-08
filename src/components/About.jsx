@@ -2,7 +2,7 @@ import { FaNodeJs, FaJs, FaPython, FaSass, FaReact } from 'react-icons/fa'
 
 const About = () => {
     return (
-        <div className='px-12'>
+        <div className='px-12 mb-12'>
             <h2 className='mb-12 text-gray-200 text-3xl'>About Me</h2>
             <p className='mb-4'>Hello I'm Samuel, Nice to meet you.</p>
             <p className='mb-8'>I'm a student of Chemical Engineering from the University of Port Harcourt. I love creating things that reside on the web space. My interest in web development started around 2018 when I
