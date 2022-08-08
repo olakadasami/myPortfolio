@@ -1,23 +1,23 @@
-import React from 'react'
+import { FaNodeJs, FaJs, FaPython, FaSass, FaReact } from 'react-icons/fa'
 
 const About = () => {
     return (
-        <div>
-            <h2>About Me</h2>
-            <p>Hello I'm Samuel, Nice to meet you.</p>
-            <p>I'm a student of Chemical Engineering from the University of Port Harcourt. I love creating things that reside on the web space. My interest in web development started around 2018 when I
+        <div className='px-12'>
+            <h2 className='mb-12 text-gray-200 text-3xl'>About Me</h2>
+            <p className='mb-4'>Hello I'm Samuel, Nice to meet you.</p>
+            <p className='mb-8'>I'm a student of Chemical Engineering from the University of Port Harcourt. I love creating things that reside on the web space. My interest in web development started around 2018 when I
                 wanted some programming knowledge during my holiday in order to be prepared for an Engineering programming course coming up the next semester. </p>
 
-            <h2>Technologies I Use</h2>
-            <p>
+            <h3 className='mb-4 text-gray-200 text-2xl'>Technologies I Use</h3>
+            <p className='mb-4'>
                 Below is a brief representation of the tools I use.
             </p>
-            <ul>
-                <li>JavaScript</li>
-                <li>ReactJS</li>
-                <li>SASS</li>
-                <li>NodeJS/ExpressJS</li>
-                <li>Python/Django</li>
+            <ul className='text-gray-200'>
+                <li className='flex items-center gap-2'><FaJs /> JavaScript</li>
+                <li className='flex items-center gap-2'><FaReact /> ReactJS</li>
+                <li className='flex items-center gap-2'><FaSass /> SASS</li>
+                <li className='flex items-center gap-2'><FaNodeJs /> NodeJS/ExpressJS</li>
+                <li className='flex items-center gap-2'><FaPython /> Python/Django</li>
             </ul>
         </div>
     )

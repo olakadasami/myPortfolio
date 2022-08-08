@@ -3,7 +3,7 @@ import Button from './Button'
 
 const Header = () => {
     return (
-        <div className='h-screen px-8 py-40 '>
+        <div className='h-screen px-12 py-40 '>
             <p className='mb-8'>
                 Hello, my name is
             </p>
