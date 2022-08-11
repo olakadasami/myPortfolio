@@ -3,8 +3,8 @@ import Button from './Button'
 
 const Header = () => {
     return (
-        <div className='h-screen mx-auto'>
-            <div className='absolute top-1/2 max-w-3xl md:px-28 px-12 -translate-y-1/2'>
+        <div className='h-screen mx-auto relative'>
+            <div className='absolute top-1/2 max-w-3xl md:px-28 px-12 z-10 -translate-y-1/2'>
                 <p className='mb-8 font-mono text-gray-200'>
                     Hello, my name is
                 </p>
