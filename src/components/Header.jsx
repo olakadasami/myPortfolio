@@ -3,12 +3,13 @@ import Button from './Button'
 
 const Header = () => {
     return (
-        <div className='h-screen mx-auto relative'>
-            <div className='absolute top-1/2 max-w-3xl md:px-28 px-12 z-10 -translate-y-1/2'>
-                <p className='mb-8 font-mono text-gray-200'>
+        <header id='header' className='h-screen flex justify-center -translate-y-16 p-12 md:p-32 items-center'>
+            <div className=''>
+
+                <p className='mb-4 font-mono text-gray-200'>
                     Hello, my name is
                 </p>
-                <h1 className='text-4xl font-bold te mb-8 md:text-6xl'>
+                <h1 className='text-5xl font-bold mb-8 md:text-6xl'>
                     <span className='block mb-4 text-gray-300 l'>Olakada Samuel.</span>
                     <span className='block '>I build web applications.</span>
                 </h1>
@@ -21,8 +22,9 @@ const Header = () => {
                         My Resume
                     </Button>
                 </div>
+
             </div>
-        </div>
+        </header>
     )
 }
 

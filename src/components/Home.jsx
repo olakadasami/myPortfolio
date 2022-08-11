@@ -17,7 +17,7 @@ function Home() {
 
     return (
         <>
-            <Nav toogle={ToogleHandler} navTooogle={navTooogle} />
+            <Nav ToogleHandler={ToogleHandler} navTooogle={navTooogle} />
             <Header />
             <About />
             <Experience />

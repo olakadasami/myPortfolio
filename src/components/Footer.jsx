@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const Footer = () => {
     return (
-        <div className='px-12  max-w-3xl md:px-28  py-10'>
+        <footer className='px-12 md:px-28  py-10'>
             <div className='md:fixed md:left-10 md:top-1/2'>
                 <ul className='flex justify-center gap-10 md:flex-col'>
                     <li className='hover:-translate-y-1 transition duration-500 hover:text-gray-200'><FaGithub size={24} /> </li>
@@ -22,7 +22,7 @@ const Footer = () => {
             <div className='text-center font-mono py-10'>
                 Built by Olakada Samuel
             </div>
-        </div>
+        </footer>
     )
 }
 

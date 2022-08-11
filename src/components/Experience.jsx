@@ -2,7 +2,7 @@ import React from 'react'
 
 const Experience = () => {
     return (
-        <section id='experience' className='px-12  max-w-3xl md:px-28  py-16'>
+        <section id='experience' className='px-12 text-center md:px-28  py-16'>
             <h2 className='text-gray-200 font-bold text-3xl mb-8'>Where I've Worked</h2>
 
             <ul className=''>
