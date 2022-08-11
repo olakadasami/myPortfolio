@@ -1,13 +1,41 @@
-import { FaBars } from 'react-icons/fa';
+import { BiMenu } from 'react-icons/bi';
+import { FaTimes } from 'react-icons/fa'
+import { HashLink } from 'react-router-hash-link';
 
-const Nav = () => {
+const Nav = ({ toogle, navTooogle }) => {
+
     return (
-        <div className='sticky text-gray-200 top-0 h-20 flex justify-between items-center px-8 shadow-xl'>
+        <div className='sticky text-white top-0 h-20 flex justify-between items-center px-8 md:px-12 shadow-xl'>
             <div id="logo" className="font-bold text-lg">
                 OlaksDev
             </div>
-            <div id="nav">
-                <FaBars />
+            <div id="nav" onClick={toogle} className='md:hidden'>
+                {navTooogle ? <FaTimes size={24} /> : <BiMenu size={28} />}
+            </div>
+
+            <div className='font-mono'>
+                <ul>
+                    <li>
+                        <HashLink to={'#about'} >
+                            About
+                        </HashLink>
+                    </li>
+                    <li>
+                        <HashLink to={'#experience'} >
+                            Experience
+                        </HashLink>
+                    </li>
+                    <li>
+                        <HashLink to={'#work'} >
+                            Work
+                        </HashLink>
+                    </li>
+                    <li>
+                        <HashLink to={'#contact'} >
+                            Contact
+                        </HashLink>
+                    </li>
+                </ul>
             </div>
         </div>
     )

@@ -2,7 +2,7 @@ import React from 'react'
 
 const Work = () => {
     return (
-        <div>
+        <div className='px-12 py-20  max-w-3xl md:px-28 '>
             <h2>
                 My Projects
             </h2>

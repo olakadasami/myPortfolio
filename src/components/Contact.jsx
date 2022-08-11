@@ -3,12 +3,13 @@ import Button from './Button'
 
 const Contact = () => {
     return (
-        <section>
-            <h2>Get In Touch</h2>
-            <p>I'm currently available to join your web development team.</p>
-            <Button>
-                Say Hello
-            </Button>
+        <section className='px-12 text-center py-20 max-w-3xl md:px-28 '>
+            <h2 className='text-3xl font-bold text-gray-200 mb-8'>Get In Touch</h2>
+            <div className='font-mono text-gray-200'>
+                <Button href={'mailto:olakadasamuel@gmail.com'}>
+                    Say Hello
+                </Button>
+            </div>
         </section>
     )
 }
