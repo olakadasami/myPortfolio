@@ -3,7 +3,7 @@ import Button from './Button'
 
 const Header = () => {
     return (
-        <header id='header' className='h-screen flex justify-center -translate-y-16 p-12 md:p-32 items-center'>
+        <header id='header' className='h-screen flex justify-start -translate-y-16 z-10 p-12 md:p-32 items-center'>
             <div className=''>
 
                 <p className='mb-4 font-mono text-gray-200'>

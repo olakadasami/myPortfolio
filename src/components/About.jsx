@@ -12,7 +12,7 @@ const About = () => {
             <p className='mb-4'>
                 Below is a brief representation of the tools I use.
             </p>
-            <ul className='text-gray-200'>
+            <ul className='text-gray-300 font-mono text-lg'>
                 <li className='flex items-center gap-2'><FaJs /> JavaScript</li>
                 <li className='flex items-center gap-2'><FaReact /> ReactJS</li>
                 <li className='flex items-center gap-2'><FaSass /> SASS</li>

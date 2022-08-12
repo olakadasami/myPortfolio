@@ -9,15 +9,15 @@ import Work from './Work'
 
 function Home() {
 
-    const [navTooogle, setNavToogle] = useState(false);
+    const [navToogle, setNavToogle] = useState(false);
 
     const ToogleHandler = () => {
-        setNavToogle(!navTooogle)
+        setNavToogle(!navToogle)
     }
 
     return (
         <>
-            <Nav ToogleHandler={ToogleHandler} navTooogle={navTooogle} />
+            <Nav ToogleHandler={ToogleHandler} navToogle={navToogle} />
             <Header />
             <About />
             <Experience />
