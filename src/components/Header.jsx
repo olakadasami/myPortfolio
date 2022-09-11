@@ -1,5 +1,4 @@
-import React from 'react'
-import Button from './Button'
+
 
 const Header = () => {
     return (
@@ -18,9 +17,11 @@ const Header = () => {
                 </p>
 
                 <div className='font-mono text-gray-200'>
-                    <Button href={'/'}>
+                    <a
+                        className="inline-block px-12 hover:-translate-y-1 duration-300 border w-fit transition py-4 rounded text-center border-gray-200" rel="noreferrer" target="_blank"
+                        href={'https://docs.google.com/document/d/1KAPXyiURDJT-IkQP7ynyBfa9T4Ar_CwRsngWPA4ZRtM/edit?usp=sharing'}>
                         My Resume
-                    </Button>
+                    </a>
                 </div>
 
             </div>
