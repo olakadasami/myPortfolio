@@ -20,7 +20,7 @@ const Work = () => {
         {
             name: "My Portfolio",
             technologies: "React, TailwindCSS",
-            live: "https://olakadasami.netlify.app/",
+            live: "https://olakadasami-portfolio.vercel.app/",
             github: "https://github.com/olakadasami/myPortfolio",
             image: portfolio,
         },

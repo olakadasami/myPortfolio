@@ -2,7 +2,8 @@
 
 Currently Building it with react.js, tailwindCSS
 
-live: 
+live: https://olakadasami-portfolio.vercel.app/
+
 
 
 
