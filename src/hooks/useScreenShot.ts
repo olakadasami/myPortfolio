@@ -1,11 +1,15 @@
 import { useEffect, useState } from "react";
 
-export function useScreenShot(url) {
-  const [screenshot, setScreenshot] = useState(null);
+export function useScreenShot(url: string) {
+  const [screenshot, setScreenshot] = useState("");
 
-  const apiUrl = `https://api.apiflash.com/v1/urltoimage?access_key=${process.env.REACT_APP_SCREENSHOT_API_KEY}&wait_until=network_idle&url=${url}`;
+  const SECRET_KEY =
+    import.meta.env.MODE === "development"
+      ? import.meta.env.PUBLIC_SCREENSHOT_API_KEY
+      : import.meta.env.SCREENSHOT_API_KEY;
+  const apiUrl = `https://api.apiflash.com/v1/urltoimage?access_key=${SECRET_KEY}&wait_until=network_idle&url=${url}`;
 
-  async function getScreenShot(url) {
+  async function getScreenShot(url: string) {
     try {
       const res = await fetch(url);
       if (res.ok) {

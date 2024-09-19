@@ -1,6 +1,12 @@
 import { useScreenShot } from "../hooks/useScreenShot";
 
-function WorkItem({ title, github, live, technologies }) {
+type Props = {
+  title: string;
+  github: string;
+  live: string;
+  technologies: string;
+};
+function WorkItem({ title, github, live, technologies }: Props) {
   const screenShot = useScreenShot(live);
   return (
     <div className="w-full sm:w-[250px] md:w-[300px] p-4 shadow-gray-200 rounded-lg shadow">
