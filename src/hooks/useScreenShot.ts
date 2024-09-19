@@ -6,7 +6,7 @@ export function useScreenShot(url: string) {
   const SECRET_KEY =
     import.meta.env.MODE === "development"
       ? import.meta.env.PUBLIC_SCREENSHOT_API_KEY
-      : import.meta.env.SCREENSHOT_API_KEY;
+      : import.meta.env.PUBLIC_SCREENSHOT_API_KEY;
   const apiUrl = `https://api.apiflash.com/v1/urltoimage?access_key=${SECRET_KEY}&wait_until=network_idle&url=${url}`;
 
   async function getScreenShot(url: string) {
