@@ -1,52 +1,28 @@
 {
-  "name": "portfolio",
-  "version": "0.1.0",
+  "name": "dev-portfolio",
   "private": true,
-  "homepage": "https://olakadasamuel.live",
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.3.0",
-    "@testing-library/user-event": "^13.5.0",
-    "framer-motion": "^7.0.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-icons": "^4.4.0",
-    "react-router-dom": "^6.3.0",
-    "react-router-hash-link": "^2.4.3",
-    "react-scripts": "5.0.1",
-    "uuid": "^8.3.2",
-    "web-vitals": "^2.1.4"
-  },
+  "version": "1.0.0",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "dev": "rsbuild dev --open",
+    "build": "rsbuild build",
+    "preview": "rsbuild preview"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "framer-motion": "^7.0.0",
+    "react-icons": "^4.4.0",
+    "react-router-hash-link": "^2.4.3",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.8",
-    "gh-pages": "^4.0.0",
-    "postcss": "^8.4.16",
-    "tailwindcss": "^3.1.8"
+    "@rsbuild/core": "^1.0.1",
+    "@rsbuild/plugin-react": "^1.0.1",
+    "@types/react": "^18.3.5",
+    "@types/react-dom": "^18.3.0",
+    "@types/react-router-hash-link": "^2.4.9",
+    "react-router-dom": "^6.3.0",
+    "tailwindcss": "^3.4.12",
+    "typescript": "^5.5.2"
   }
 }
