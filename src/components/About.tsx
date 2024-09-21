@@ -1,30 +1,53 @@
-import { FaNodeJs, FaJs, FaPython, FaSass, FaReact } from 'react-icons/fa'
-import { SiTailwindcss } from 'react-icons/si'
-
 const About = () => {
-    return (
-        <section id='about' className='px-12 mb-12 max-w-3xl md:px-28 '>
-            <h2 className='mb-12 font-bold text-gray-200 text-3xl'>
-                <span className='mr-4 font-mono text-xl text-gray-200 font-normal'>01.</span>
-                About Me</h2>
-            <p className='mb-4'>Hello I'm Samuel, Nice to meet you.</p>
-            <p className='mb-8'>I'm a student of Chemical Engineering from the University of Port Harcourt. I love creating things that reside on the web space. My interest in web development started around 2018 when I
-                wanted some programming knowledge during my holiday in order to be prepared for an Engineering programming course coming up the next semester. </p>
+  return (
+    <section id="about" className="px-12 mb-12 space-y-6 max-w-3xl md:px-28 ">
+      <h2 className=" font-bold text-gray-200 text-3xl">
+        <span className="mr-4 font-mono text-xl text-gray-200 font-normal">
+          01.
+        </span>
+        About Me
+      </h2>
+      <p className="text-justify">
+        I&apos;m a passionate Full-Stack Software Developer with expertise in
+        both frontend and backend technologies. My focus is on building
+        efficient, scalable, and user-friendly applications.
+      </p>
 
-            <h3 className='mb-4 font-semibold text-gray-200 text-2xl'>Technologies I Use</h3>
-            <p className='mb-4'>
-                I am more focused on Front-end technologies though I have some experience with backend.
-            </p>
-            <ul className='text-gray-300 font-mono text-lg'>
-                <li className='flex items-center gap-2'><FaJs /> JavaScript</li>
-                <li className='flex items-center gap-2'><FaReact /> ReactJS</li>
-                <li className='flex items-center gap-2'><SiTailwindcss /> TailwindCSS</li>
-                <li className='flex items-center gap-2'><FaSass /> SASS</li>
-                <li className='flex items-center gap-2'><FaNodeJs /> NodeJS/ExpressJS</li>
-                <li className='flex items-center gap-2'><FaPython /> Python/Django</li>
-            </ul>
-        </section>
-    )
-}
+      <h3 className=" font-semibold text-gray-200 text-2xl">
+        Skills & Technologies
+      </h3>
+      <ul className="text-gray-300  list-disc">
+        <li className="items-center gap-2 list-item">
+          <span className="font-semibold text-lg">Frontend: </span> React.js,
+          Next.js, TailwindCSS, JavaScript, TypeScript
+        </li>
+        <li className="items-center gap-2 list-item">
+          <span className="font-semibold text-lg">Backend: </span>AdonisJS,
+          Node.js, Laravel
+        </li>
+        <li className="items-center gap-2 list-item">
+          <span className="font-semibold text-lg">APIs & Databases: </span>
+          RESTful APIs, PostgreSQL, SQLite, MySQL, MongoDB
+        </li>
+        <li className="items-center gap-2 list-item">
+          <span className="font-semibold text-lg">Tools & Workflow: </span>Git,
+          Figma, Docker, Strapi CMS, DevOps
+        </li>
+      </ul>
 
-export default About
+      <p className="text-justify">
+        I enjoy taking on complex challenges, learning new tools and frameworks,
+        and constantly improving my skill set. Whether it&apos;s developing
+        intuitive frontend interfaces or building robust backend APIs, I aim to
+        deliver quality software solutions that provide real value to users.
+      </p>
+
+      <p className="text-justify">
+        Feel free to check out my projects below to see how I bring these skills
+        to life!
+      </p>
+    </section>
+  );
+};
+
+export default About;
