@@ -5,10 +5,12 @@
   "description": "A Strapi application",
   "scripts": {
     "build": "strapi build",
+    "build:prod": "cross-env NODE_ENV=production bun run build",
     "deploy": "strapi deploy",
     "develop": "strapi develop",
     "seed:example": "node ./scripts/seed.js",
     "start": "strapi start",
+    "start:prod": "cross-env NODE_ENV=production bun start",
     "strapi": "strapi"
   },
   "dependencies": {
@@ -16,6 +18,7 @@
     "@strapi/plugin-users-permissions": "5.0.0",
     "@strapi/strapi": "5.0.0",
     "better-sqlite3": "9.4.3",
+    "cross-env": "^7.0.3",
     "fs-extra": "^10.0.0",
     "mime-types": "^2.1.27",
     "react": "^18.0.0",
