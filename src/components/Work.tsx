@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import WorkItem from "./WorkItem";
+import { fetchProjects } from "../services/projects";
 
 type TProject = {
   id: number;
@@ -9,19 +10,6 @@ type TProject = {
   technologies: string;
   description: string;
   tag: string;
-};
-
-const fetchProjects = async () => {
-  const token = `b2689a49ac239858e047f9e101a498d7f0202284b5258d73ba3423fbfebda0181d29d6b90fd61bdef37f66e92854454e8ee3daf67d7ab821f8240370ee23af2c99afd251e9258cf3b4dbbc96d2d3018398c07e15554a974bf5c8149d568f8f5bf9d1028d73000e4da7c3892db6aa81bf0c29f9e291a4445b2a694d8fa3a452ce`;
-  const res = await fetch("http://localhost:1337/api/projects", {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  });
-  if (!res.ok) {
-    throw new Error("Network response was not ok");
-  }
-  return res.json();
 };
 
 const Work = () => {
