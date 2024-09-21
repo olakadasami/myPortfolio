@@ -4,7 +4,7 @@ import { PropsWithChildren } from "react";
 
 type Props = {
   title: string;
-  github: string;
+  github?: string;
   live: string;
   technologies: string;
   description: string;
@@ -55,9 +55,11 @@ function WorkItem({
 
         <div className="flex gap-4">
           <Button href={live}>Visit website</Button>
-          <Button href={github}>
-            <FaGithub />
-          </Button>
+          {github && (
+            <Button href={github}>
+              <FaGithub />
+            </Button>
+          )}
         </div>
       </div>
     </div>
@@ -77,7 +79,6 @@ function TechTag({ tag }: { tag: string }) {
 function Button({ href, children }: { href: string } & PropsWithChildren) {
   return (
     <a
-      // className=" active:scale-90 bg-[#0b0825] px-6 hover:-translate-y-1  duration-300 w-fit transition py-3 rounded text-center"
       className="flex items-center px-6 hover:-translate-y-1 duration-300 border hover:text-white w-fit transition py-3 rounded text-center border-gray-400 hover:border-white"
       target="_blank"
       rel="noreferrer"

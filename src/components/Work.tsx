@@ -6,7 +6,7 @@ type TProject = {
   id: number;
   title: string;
   liveUrl: string;
-  githubUrl: string;
+  githubUrl?: string;
   technologies: string;
   description: string;
   tag: string;
