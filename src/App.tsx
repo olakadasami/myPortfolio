@@ -5,7 +5,7 @@ import { siteMeta } from "./metaConfig";
 
 const App = () => {
   return (
-    <main className="bg-gradient md:px-5 lg:px-10 text-gray-400">
+    <main className="bg-gradient md:px-5 lg:px-10 text-gray-400 font-poppins">
       {/* SEO optimization */}
       <Helmet>
         <meta name="viewport" content="width=device-width, initial-scale=1" />

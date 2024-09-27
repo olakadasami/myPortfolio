@@ -1,50 +1,29 @@
+import { useQuery } from "@tanstack/react-query";
 import WorkItem from "./WorkItem";
+import { fetchProjects } from "../services/projects";
+
+type TProject = {
+  id: number;
+  title: string;
+  liveUrl: string;
+  githubUrl?: string;
+  technologies: string;
+  description: string;
+  tag: string;
+};
 
 const Work = () => {
-  const projects = [
-    {
-      name: "AnonAmebo",
-      technologies: "Adonisjs, TailwindCSS",
-      live: "https://anonamebo.onrender.com",
-      github: "https://github.com/olakadasami/AnonAmebo",
-    },
-    {
-      name: "Crappo",
-      technologies: "React, TailwindCSS",
-      live: "https://crappo-olakadasami.vercel.app/",
-      github: "https://github.com/olakadasami/crappo",
-    },
-    {
-      name: "My Portfolio",
-      technologies: "React, TailwindCSS",
-      live: "https://olakadasamuel.site",
-      github: "https://github.com/olakadasami/myPortfolio",
-    },
-    {
-      name: "allStores e-commerce",
-      technologies: "ReactJs, TailwindCSS",
-      live: "https://olaks-allstores.netlify.app/",
-      github: "https://github.com/olakadasami/allStores",
-    },
-    {
-      name: "Insure Landing",
-      technologies: "HTML5, CSS3",
-      live: "https://insurelanding-olaks.netlify.app/",
-      github: "https://github.com/olakadasami/insure",
-    },
-    {
-      name: "HomeSmart Furniture",
-      technologies: "SCSS, HTML5",
-      live: "https://olaks-furniture-rental.netlify.app/",
-      github: "https://github.com/olakadasami/furniture",
-    },
-    {
-      name: "Intro Section",
-      technologies: "CSS3, HTML5",
-      live: "https://fem-intro-section-olaks.netlify.app/",
-      github: "https://github.com/olakadasami/intro-section-FEM",
-    },
-  ];
+  const {
+    data: projects,
+    error,
+    isLoading,
+  } = useQuery({ queryKey: ["projects"], queryFn: fetchProjects });
+
+  console.log({ projects });
+
+  if (isLoading) return <div>Loading...</div>;
+  if (error instanceof Error) return <div>Error: {error.message}</div>;
+
   return (
     <section id="work" className="px-12 py-20 ">
       <h2 className="text-4xl font-bold text-white mb-12">
@@ -54,15 +33,17 @@ const Work = () => {
         My Projects
       </h2>
 
-      <div className="flex gap-20 flex-wrap justify-center">
-        {projects.map((project, index) => (
+      <div className="flex flex-col gap-10">
+        {projects?.data?.map((project: TProject, index: number) => (
           <WorkItem
-            key={index}
-            title={project.name}
-            live={project.live}
-            image={project.image}
-            github={project.github}
+            key={project.id}
+            title={project.title}
+            live={project.liveUrl}
+            github={project.githubUrl}
             technologies={project.technologies}
+            description={project.description}
+            tag={project.tag}
+            index={index}
           />
         ))}
       </div>
