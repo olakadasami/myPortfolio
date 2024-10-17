@@ -4,6 +4,8 @@ import { fetchStrapi } from "../shared/services/fetchStrapi";
 import { ExperienceResponseSchema, TExperience } from "./experience.types";
 import ExperienceTabButton from "./ExperienceTabButton";
 import ExperienceTabDetails from "./ExperienceTabDetails";
+import Skeleton from "react-loading-skeleton";
+import ErrorComponent from "../../components/ErrorComponent";
 
 const TabNav = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -18,8 +20,10 @@ const TabNav = () => {
     queryFn: fetchStrapi("/api/experiences", ExperienceResponseSchema),
   });
 
-  if (isLoading) return <div>Loading...</div>;
-  if (error instanceof Error) return <div>Error: {error.message}</div>;
+  if (isLoading)
+    return <Skeleton baseColor="rgb(38, 34, 70)" height={30} count={5} />;
+  if (error instanceof Error)
+    return <ErrorComponent errorMessage={error.message} />;
 
   return (
     <div className="max-w-4xl mx-auto flex flex-col md:flex-row gap-8 my-8">

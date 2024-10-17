@@ -2,6 +2,8 @@ import { useQuery } from "@tanstack/react-query";
 import ProjectItem from "./ProjectItem";
 import { fetchStrapi } from "../shared/services/fetchStrapi";
 import { ProjectResponseSchema } from "./project.types";
+import Skeleton from "react-loading-skeleton";
+import ErrorComponent from "../../components/ErrorComponent";
 
 const Project = () => {
   const {
@@ -23,8 +25,10 @@ const Project = () => {
       </h2>
 
       <div className="flex flex-col gap-10">
-        {isLoading && <div>Loading...</div>}
-        {error ? <div>Error: {error.message}</div> : null}
+        {isLoading && (
+          <Skeleton baseColor="rgb(38, 34, 70)" height={30} count={5} />
+        )}
+        {error ? <ErrorComponent errorMessage={error.message} /> : null}
 
         {projects?.data.map((project, index: number) => (
           <ProjectItem key={project.id} {...project} index={index} />
