@@ -1,6 +1,6 @@
 import { FaGithub } from "react-icons/fa";
 import { useScreenShot } from "./useScreenShot";
-import { PropsWithChildren } from "react";
+import { PropsWithChildren, useState } from "react";
 import { TProject } from "./project.types";
 
 type Props = {
@@ -16,12 +16,18 @@ function ProjectItem({
   tag,
   index,
 }: Props) {
+  const [isExpanded, setIsExpanded] = useState(false);
+
   const screenShot = useScreenShot(liveUrl);
   const techTags = technologies.split(", ");
 
+  const toggleExpansion = () => {
+    setIsExpanded(!isExpanded);
+  };
+
   return (
     <div
-      className={`w-full -bg-gradient p-8 flex flex-col ${
+      className={`w-full -bg-gradient p-4 md:p-8 flex flex-col ${
         index % 2 === 0 ? "lg:flex-row-reverse" : "lg:flex-row"
       } lg:items-center gap-6 rounded-lg shadow-lg`}
     >
@@ -32,7 +38,7 @@ function ProjectItem({
 
       {/* Text content */}
       <div className="space-y-4 flex-1">
-        <h1 className="flex gap-4 items-center">
+        <h1 className="flex flex-col md:flex-row gap-2 md:gap-4 items-center">
           <span className="font-bold text-center md:text-start text-gray-200 text-2xl capitalize">
             {title}
           </span>
@@ -41,7 +47,21 @@ function ProjectItem({
           </span>
         </h1>
 
-        <p className="text-justify text-sm">{description}</p>
+        <div>
+          <p
+            className={`${
+              isExpanded ? "" : "line-clamp-4"
+            } md:text-justify text-xs sm:text-sm`}
+          >
+            {description}
+          </p>
+          <button
+            onClick={toggleExpansion}
+            className="mt-2 text-sm md:hidden text-blue-500 hover:underline"
+          >
+            {isExpanded ? "Read less" : "Read more"}
+          </button>
+        </div>
 
         <p className="flex items-center gap-4">
           {techTags.map((tag) => (
