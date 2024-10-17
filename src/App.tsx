@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet-async";
 import "./App.css";
 import Home from "./features/shared/Home";
 import { siteMeta } from "./metaConfig";
+import "react-loading-skeleton/dist/skeleton.css";
 
 const App = () => {
   return (
