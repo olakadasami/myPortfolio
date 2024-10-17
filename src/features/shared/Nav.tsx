@@ -21,11 +21,11 @@ const sideVariant = {
 };
 
 type Props = {
-  ToogleHandler: () => void;
-  navToogle: boolean;
+  ToggleHandler: () => void;
+  navToggle: boolean;
 };
 
-const Nav = ({ ToogleHandler, navToogle }: Props) => {
+const Nav = ({ ToggleHandler, navToggle }: Props) => {
   const [scrollPos, setScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
 
@@ -51,12 +51,12 @@ const Nav = ({ ToogleHandler, navToogle }: Props) => {
         visible ? "top-0" : "-top-20"
       } transition-all duration-300 h-20 flex justify-between items-center px-8 md:px-12 shadow-xl`}
     >
-      <div id="logo" className="font-bold text-lg">
+      <div id="lggo" className="font-bold text-lg">
         OlaksDev
       </div>
       <div
         id="nav"
-        onClick={ToogleHandler}
+        onClick={ToggleHandler}
         className="md:hidden cursor-pointer"
       >
         <svg
@@ -100,9 +100,9 @@ const Nav = ({ ToogleHandler, navToogle }: Props) => {
         </ol>
       </div>
 
-      {navToogle && (
+      {navToggle && (
         <nav
-          onClick={ToogleHandler}
+          onClick={ToggleHandler}
           className="w-full h-screen fixed top-0 bg-trans backdrop-blur z-40 right-0 md:hidden"
         >
           <AnimatePresence>
@@ -115,7 +115,7 @@ const Nav = ({ ToogleHandler, navToogle }: Props) => {
             >
               <ol className="font-mono relative flex flex-col h-full items-center justify-center">
                 <li
-                  onClick={ToogleHandler}
+                  onClick={ToggleHandler}
                   className="right-10 absolute top-8 cursor-pointer"
                 >
                   <svg
@@ -133,22 +133,22 @@ const Nav = ({ ToogleHandler, navToogle }: Props) => {
                     />
                   </svg>
                 </li>
-                <li onClick={ToogleHandler} className="p-8">
+                <li onClick={ToggleHandler} className="p-8">
                   <HashLink smooth to="#about">
                     01. About
                   </HashLink>
                 </li>
-                <li onClick={ToogleHandler} className="p-8 ">
+                <li onClick={ToggleHandler} className="p-8 ">
                   <HashLink smooth to="#experience">
                     02. Experience
                   </HashLink>
                 </li>
-                <li onClick={ToogleHandler} className="p-8 ">
+                <li onClick={ToggleHandler} className="p-8 ">
                   <HashLink smooth to="#work">
                     03. Work
                   </HashLink>
                 </li>
-                <li onClick={ToogleHandler} className="p-8 ">
+                <li onClick={ToggleHandler} className="p-8 ">
                   <HashLink smooth to="#contact">
                     04. Contact
                   </HashLink>

@@ -15,7 +15,8 @@
     "react-helmet-async": "^2.0.5",
     "react-icons": "^4.4.0",
     "react-router-hash-link": "^2.4.3",
-    "uuid": "^8.3.2"
+    "uuid": "^8.3.2",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@rsbuild/core": "^1.0.1",

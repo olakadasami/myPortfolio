@@ -1,26 +1,22 @@
 import { FaGithub } from "react-icons/fa";
-import { useScreenShot } from "../hooks/useScreenShot";
+import { useScreenShot } from "./useScreenShot";
 import { PropsWithChildren } from "react";
+import { TProject } from "./project.types";
 
 type Props = {
-  title: string;
-  github?: string;
-  live: string;
-  technologies: string;
-  description: string;
   index: number;
-  tag: string;
-};
-function WorkItem({
+} & TProject;
+
+function ProjectItem({
   title,
-  github,
-  live,
+  githubUrl,
+  liveUrl,
   technologies,
   description,
-  index,
   tag,
+  index,
 }: Props) {
-  const screenShot = useScreenShot(live);
+  const screenShot = useScreenShot(liveUrl);
   const techTags = technologies.split(", ");
 
   return (
@@ -49,14 +45,14 @@ function WorkItem({
 
         <p className="flex items-center gap-4">
           {techTags.map((tag) => (
-            <TechTag tag={tag} />
+            <TechTag key={tag} tag={tag} />
           ))}
         </p>
 
         <div className="flex gap-4">
-          <Button href={live}>Visit website</Button>
-          {github && (
-            <Button href={github}>
+          <Button href={liveUrl}>Visit website</Button>
+          {githubUrl && (
+            <Button href={githubUrl}>
               <FaGithub />
             </Button>
           )}
@@ -66,13 +62,13 @@ function WorkItem({
   );
 }
 
-export default WorkItem;
+export default ProjectItem;
 
 function TechTag({ tag }: { tag: string }) {
   return (
-    <p className="lowercase bg-gray-700 px-4 py-2 font-mono text-xs rounded-full text-gray-200">
+    <span className="lowercase bg-gray-700 px-4 py-2 font-mono text-xs rounded-full text-gray-200">
       {tag}
-    </p>
+    </span>
   );
 }
 

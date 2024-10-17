@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import "./App.css";
-import Home from "./components/Home";
+import Home from "./features/shared/Home";
 import { siteMeta } from "./metaConfig";
 
 const App = () => {
