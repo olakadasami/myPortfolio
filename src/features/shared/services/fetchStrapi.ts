@@ -1,13 +1,11 @@
 import { z, ZodSchema } from "zod";
-
-const token = import.meta.env.PUBLIC_STRAPI_API_TOKEN;
-const BASE_URL = import.meta.env.PUBLIC_STRAPI_URL;
+import { env } from "../../../config/env";
 
 export const fetchStrapi = <T extends z.ZodTypeAny>(url: string, schema: T) => {
   return async (): Promise<z.infer<T>> => {
-    const res = await fetch(`${BASE_URL}${url}`, {
+    const res = await fetch(`${env.PUBLIC_STRAPI_URL}${url}`, {
       headers: {
-        Authorization: `Bearer ${token}`,
+        Authorization: `Bearer ${env.PUBLIC_STRAPI_API_TOKEN}`,
       },
     });
 

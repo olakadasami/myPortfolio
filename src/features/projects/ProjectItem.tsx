@@ -1,7 +1,10 @@
 import { FaGithub } from "react-icons/fa";
-import { useScreenShot } from "./useScreenShot";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { PropsWithChildren, useState } from "react";
 import { TProject } from "./project.types";
+import { useQuery } from "@tanstack/react-query";
+import { screenshotOptions } from "./useScreenShot";
+import { motion } from "framer-motion";
 
 type Props = {
   index: number;
@@ -17,8 +20,10 @@ function ProjectItem({
   index,
 }: Props) {
   const [isExpanded, setIsExpanded] = useState(false);
+  const { data: screenShot = "", isLoading: isScreenshotLoading } = useQuery(
+    screenshotOptions(liveUrl)
+  );
 
-  const screenShot = useScreenShot(liveUrl);
   const techTags = technologies.split(", ");
 
   const toggleExpansion = () => {
@@ -33,7 +38,10 @@ function ProjectItem({
     >
       {/* Image */}
       <div className="w-full md:w-1/3 rounded overflow-hidden">
-        <img className="w-full" src={screenShot} alt={title} />
+        {isScreenshotLoading && (
+          <AiOutlineLoading3Quarters className="text-4xl text-center w-full animate-spin" />
+        )}
+        {screenShot && <img className="w-full" src={screenShot} alt={title} />}
       </div>
 
       {/* Text content */}

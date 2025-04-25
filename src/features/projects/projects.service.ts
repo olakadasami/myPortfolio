@@ -1,10 +1,9 @@
-export const fetchProjects = async () => {
-  const token = import.meta.env.PUBLIC_STRAPI_API_TOKEN;
-  const BASE_URL = import.meta.env.PUBLIC_STRAPI_URL;
+import { env } from "../../config/env";
 
-  const res = await fetch(`${BASE_URL}/api/projects`, {
+export const fetchProjects = async () => {
+  const res = await fetch(`${env.PUBLIC_STRAPI_URL}/api/projects`, {
     headers: {
-      Authorization: `Bearer ${token}`,
+      Authorization: `Bearer ${env.PUBLIC_STRAPI_API_TOKEN}`,
     },
   });
 
